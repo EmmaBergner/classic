@@ -1,31 +1,58 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Classic
+ [Classic](https://emmabergner.github.io/blink/) is a Python terminal game, and inspired version of the classic game "hangman" but with a twist. 
+ 
+ Classic can be used for playing and fun purposes but also as an application looking for lunch or dinner ideas. With a simple design and it's own twist, the terminal ask the user what the meal of the day is and prevents it by the end of the game. 
+ 
+ The idea is for users to have fun playing but also to get some inspiration for next coming meal of the day.
 
-Welcome EmmaBergner,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## How to play
+Like the classic hangman game, the player guesses on a letters that could be apart of the chosen word, is told how long the word is and has a certain tries of guesses. In this version I have a specific theme on the words, witch is different meals. 
 
-## Reminders
+ - The user starts by enter first guess of letter. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+- The given letter will be printed by the terminal as a correct answer or wrong answer. 
 
-## Creating the Heroku app
+- The user wins by entering the right letters before 8 turns. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Existing Features
+Welcome message 
+- The game starts by displaying a welcome and introduction message to the user. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+User input
+- The user is asked to type in a letter that could match the word. 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Input validation 
+- Users will get an error message if numbers or already give letter is being entered.
 
-Connect your GitHub repository and deploy as normal.
+Decision 
+- If the letter matches any letter in the word, it will appear on the correct spot in the word. And if the letter does not match it will be displayed in a different list. 
+- Guesses are displayed and updated after each round
+- Repeats 8 times unless user guess word before. 
 
-## Constraints
+### Future features 
+- I would like to add an larger word list. And to give the users more options and choices. 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+### Lucid Chart 
+    - Maybe or not? 
+
+## Data Model 
+
+### Testing 
+- I have tested this project through: 
+    - The PEP8 linter and comfirmed there are no problems. 
+    - Given invalid inputs such as numbers when letters are expected. 
+
+### Validator Tester
+- PEP8 
+    - No errors were returned from [PEP8](ADRESSHIT)
+
+### Bugs
+- No found bugs 
+
+## Deployment 
+
+## Credits 

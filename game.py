@@ -42,7 +42,7 @@ def user_input():
     Repeats for 8 times.
     """
     failed = ""
-    letter_in_word = "_ _ _ _ _ _ _ _ _ _ "
+    letter_in_word = "_ _ _ _ "
     for i in range(3):
         letter_from_user = input("Type a letter: ")
         failed = failed + "[ " + letter_from_user + " ]"
