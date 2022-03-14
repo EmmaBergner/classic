@@ -33,7 +33,9 @@ Decision
 - Repeats 8 times unless user guess word before. 
 
 ### Future features 
-- I would like to add an larger word list. And to give the users more options and choices. 
+- I would like to add larger scale of words for the users.
+- Give users more options and choices. 
+- Allow users to choice different categories. 
 
 
 ### Lucid Chart 
@@ -43,7 +45,7 @@ Decision
 
 ### Testing 
 - I have tested this project through: 
-    - The PEP8 linter and comfirmed there are no problems. 
+    - The PEP8 linter and confirmed there are no problems. 
     - Given invalid inputs such as numbers when letters are expected. 
 
 ### Validator Tester
@@ -56,3 +58,4 @@ Decision
 ## Deployment 
 
 ## Credits 
+- I used W3 School through out my project. 
