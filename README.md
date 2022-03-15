@@ -7,7 +7,7 @@
 
 
 ## How to play
-Like the classic hangman game, the player guesses on a letters that could be apart of the chosen word, is told how long the word is and has a certain tries of guesses. In this version I have a specific theme on the words, witch is different meals. 
+Like the classic hangman game, the player guesses on a letter that could be apart of the chosen word, is told how long the word is and has a certain tries of guesses. In this version I have a specific theme on the words, witch is different meals. 
 
  - The user starts by enter first guess of letter. 
 
@@ -39,7 +39,7 @@ Decision
 
 
 ### Lucid Chart 
-    - Maybe or not? 
+- Shall I? 
 
 ## Data Model 
 

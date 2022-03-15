@@ -25,30 +25,18 @@ def character_position(string, letter_from_user):
     return result
 
 
-def wrong_letter(string, letter_from_user):
-    """
-   Retuns wrong letter at right position 
-    """
-    result = []
-    for i in range(len(string)):
-        if string[i] != letter_from_user:
-            result.append(string[i])
-            print(string[i])
-    return result
-
-
 def user_input():
     """Create a input field for user to enter a letter.
     Repeats for 8 times.
     """
     failed = ""
     letter_in_word = "_ _ _ _ "
-    for i in range(3):
+    for i in range(4):
         letter_from_user = input("Type a letter: ")
-        failed = failed + "[ " + letter_from_user + " ]"
+        if letter_from_user not in word:
+            failed = failed + "[ " + letter_from_user + " ]"
         correct = correct_hits(letter_in_word, letter_from_user)
-        wrong = wrong_letter(word, letter_from_user)
-        padding = make_padding(wrong, correct) 
+        padding = make_padding(failed, correct) 
         print(failed + padding + correct + "\n")
         letter_in_word = correct
 
