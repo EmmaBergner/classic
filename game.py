@@ -1,4 +1,4 @@
-word = "Soup"
+word = "SOUP"
 
 
 def make_padding(failed, correct):
@@ -16,7 +16,9 @@ def make_padding(failed, correct):
 
 def character_position(string, letter_from_user):
     """
-    Returns right position for character
+    Check if letter_from_user is in string.
+    Return a list of the positions (might be empty). 
+    Example: string = "Soup", letter_from_user = "o" returns on position 2.
     """
     result = []
     for i in range(len(string)):
@@ -25,24 +27,10 @@ def character_position(string, letter_from_user):
     return result
 
 
-def user_input():
-    """Create a input field for user to enter a letter.
-    Repeats for 8 times.
-    """
-    failed = ""
-    letter_in_word = "_ _ _ _ "
-    for i in range(4):
-        letter_from_user = input("Type a letter: ")
-        if letter_from_user not in word:
-            failed = failed + "[ " + letter_from_user + " ]"
-        correct = correct_hits(letter_in_word, letter_from_user)
-        padding = make_padding(failed, correct) 
-        print(failed + padding + correct + "\n")
-        letter_in_word = correct
-
-
 def correct_hits(correct, letter_from_user):
-    """ Place the letter in correct place """
+    """ Place letter_from_user from letter_in_word in correct place in list.
+    Example: _ _ _ _ , "o" 
+    """
     hits = (character_position(word, letter_from_user))
     for hit in range(len(hits)):
         index = hits[hit] * 2
@@ -51,8 +39,21 @@ def correct_hits(correct, letter_from_user):
 
 
 def main():
-    """ Run all program function """
-    user_input()
+    """ Run the program """
+    failed = ""
+    letter_in_word = "_ _ _ _ "
+    for i in range(6):
+        letter_from_user = input("Type a letter: ")
+        letter_from_user = letter_from_user.capitalize()
+        if letter_from_user not in word:
+            failed = failed + "[ " + letter_from_user + " ]"
+        correct = correct_hits(letter_in_word, letter_from_user)
+        padding = make_padding(failed, correct) 
+        print(failed + padding + correct + "\n")
+        letter_in_word = correct
+        if "_" not in word: 
+            break
+    print("The meal of the day is " + word.lower())
 
 
 """ Program starts here """
