@@ -3,7 +3,7 @@ import random
 
 def make_up_word():
     """
-    Pick one random word from list in word.txt-file.
+    Pick one random word from the file word.txt.
     """
     with open('word.txt') as f:
         list_of_words = f.readlines()
@@ -12,7 +12,8 @@ def make_up_word():
 
 def correct_underscore(size):
     """
-    Match correct_underscore lines with size of the random word.
+    Create a sting with the number of underscored given by 'size',
+    seperate by a space.
     Exampel: correct_underscore(6) returns "_ _ _ _ _ _".
     """
     result = "_"
@@ -24,8 +25,8 @@ def correct_underscore(size):
 def make_padding(failed, correct):
     """
     Create a string that is used as padding. The length of this string
-    and the length of the two parameter strings will be the sum 60.
-    Example: make_padding("[D]", "_ A _ _ _") returns 59 spaces.
+    and the length of the two parameter strings will total 65.
+    Example: make_padding("[D]", "_ A _ _ _") returns 53 spaces.
     """
     padding = " "
     length = 65 - len(failed) - len(correct)
@@ -38,7 +39,7 @@ def character_position(string, letter_from_user):
     """
     Check if letter_from_user is in string.
     Return a list of the positions (might be empty).
-    Example: character_position("SOUP", "O") returns  "_ O _ _"
+    Example: character_position("SOUP", "O") returns [2]
     """
     result = []
     for i in range(len(string)):
@@ -48,7 +49,8 @@ def character_position(string, letter_from_user):
 
 
 def correct_hits(word, correct, letter_from_user):
-    """ Place letter_from_user from correct in correct place in list.
+    """ 
+    Place letter_from_user from correct in correct place in list.
     Example: correct_hits("PIZZA", "_ _ _ _ _", "Z") returns "_ _ Z Z _"
     """
     hits = (character_position(word, letter_from_user))
@@ -59,7 +61,8 @@ def correct_hits(word, correct, letter_from_user):
 
 
 def error_handling(letter_from_user, failed, correct):
-    """ Checks if letter_from_user is:
+    """ 
+    Checks if letter_from_user is:
     More then one letter, a number, existing in failed and correct list.
     Prints out error-message to user.
     Exampel: error_handling("E", ["E"], "E") return
