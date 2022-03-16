@@ -1,13 +1,12 @@
 # Classic
  [Classic](https://emmabergner.github.io/blink/) is a Python terminal game, and inspired version of the classic game "hangman" but with a twist. 
  
- Classic can be used for playing and fun purposes but also as an application looking for lunch or dinner ideas. With a simple design and it's own twist, the terminal ask the user what the meal of the day is and prevents it by the end of the game. 
+ Classic can be used for playing and fun purposes but also as an application looking for lunch or dinner ideas. With a simple design and it's own twist. The idea is for users to have fun playing but also to get some inspiration for next coming meal of the day.
  
- The idea is for users to have fun playing but also to get some inspiration for next coming meal of the day.
-
+ The terminal ask the user what the meal of the day is and prevents it by the end of the game. 
 
 ## How to play
-Like the classic hangman game, the player guesses on a letter that could be apart of the chosen word, is told how long the word is and has a certain tries of guesses. In this version I have a specific theme on the words, witch is different meals. 
+Like the classic hangman game, the player guesses on a letter that could be apart of the chosen word, is told how long the word is and has a certain tries of guesses. In this version I have a specific theme on the words, which is different meals. 
 
  - The user starts by enter first guess of letter. 
 

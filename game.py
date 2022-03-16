@@ -81,10 +81,10 @@ def main():
         if letter_from_user not in word:
             failed = failed + "[ " + letter_from_user + " ]"
         correct = correct_hits(letter_in_word, letter_from_user)
-        padding = make_padding(failed, correct) 
+        padding = make_padding(failed, correct)
         print(failed + padding + correct + "\n")
         letter_in_word = correct
-        if "_" not in correct: 
+        if "_" not in correct:
             print("Well done!! ")
             break
     print("The meal of the day is: " + word.lower())
