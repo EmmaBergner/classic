@@ -17,19 +17,19 @@ Like the classic hangman game, the player guesses on a letter that could be apar
 ## Features
 
 ### Existing Features
-Welcome message 
-- The game starts by displaying a welcome and introduction message to the user. 
-
-User input
-- The user is asked to type in a letter that could match the word. 
-
-Input validation 
-- Users will get an error message if numbers or already give letter is being entered.
-
-Decision 
-- If the letter matches any letter in the word, it will appear on the correct spot in the word. And if the letter does not match it will be displayed in a different list. 
-- Guesses are displayed and updated after each round
-- Repeats 8 times unless user guess word before. 
+- __Welcome message__ 
+    - The game starts by displaying a welcome and introduction message to the user. 
+ ![Welcome Message ](/readme/welcomemessage.png)
+- __User input__
+    - The user is asked to type in a letter that could match the word. 
+    - Guesses are displayed and updated after each round
+ ![User input ](/readme/userinput.png)
+- __Input validation__ 
+    - Users will get an error message if numbers or already give letter is being entered.
+ ![Error Message ](/readme/errormessage.png)
+- __Decision__ 
+    - If the letter matches any letter in the word, it will appear on the correct spot in the word. And if the letter does not match it will be displayed in a different list. 
+    - Repeats 8 times unless user guess word before. 
 
 ### Future features 
 - I would like to add larger scale of words for the users.
@@ -38,14 +38,25 @@ Decision
 
 
 ### Lucid Chart 
-- Shall I? 
+ ![Lucid Chart ](/readme/lc.png)
 
-## Data Model 
+## Technologies Used 
+
+### Languages Used
+- __Python__
+
+### Frameworks, Libraries & Programs Used
+
+- __GitPod:__
+     GitPod was used to provide the programming environment. 
+
+- __GitHub:__
+    GitHub is used to store the project code.
 
 ### Testing 
-- I have tested this project through: 
-    - The PEP8 linter and confirmed there are no problems. 
-    - Given invalid inputs such as numbers when letters are expected. 
+I have tested this project through:
+- The PEP8 linter and confirmed there are no problems. 
+- Given invalid inputs such as numbers when letters are expected. See result in "Input validation" section.
 
 ### Validator Tester
 - PEP8 
@@ -55,6 +66,8 @@ Decision
 - No found bugs 
 
 ## Deployment 
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
 
 ## Credits 
+__Content__
 - I used W3 School through out my project. 

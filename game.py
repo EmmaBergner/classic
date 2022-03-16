@@ -1,16 +1,31 @@
 import random
 
-with open('word.txt') as f:
-    list_of_words = f.readlines()
-    word = random.choice(list_of_words).upper()
-    print(word)
+
+def make_up_word():
+    """
+    Pick one random word from list in word.txt-file.
+    """
+    with open('word.txt') as f:
+        list_of_words = f.readlines()
+    return random.choice(list_of_words).upper().strip()
+
+
+def correct_underscore(size):
+    """
+    Match correct_underscore lines with size of the random word.
+    Exampel: correct_underscore(6) returns "_ _ _ _ _ _".
+    """
+    result = "_"
+    for i in range(size-1):
+        result = result + " _"
+    return result
 
 
 def make_padding(failed, correct):
     """
-    Create a string that is used as padding. The length of this string 
+    Create a string that is used as padding. The length of this string
     and the length of the two parameter strings will be the sum 60.
-    Example: make_padding("[d]", "_ a _ _ _") returns 54 spaces. 
+    Example: make_padding("[D]", "_ A _ _ _") returns 54 spaces.
     """
     padding = " "
     length = 60 - len(failed) - len(correct)
@@ -23,7 +38,7 @@ def character_position(string, letter_from_user):
     """
     Check if letter_from_user is in string.
     Return a list of the positions (might be empty). 
-    Example: string = "Soup", letter_from_user = "o" returns on position 2.
+    Example: character_position("SOUP", "O") returns  "_ O _ _"
     """
     result = []
     for i in range(len(string)):
@@ -32,9 +47,9 @@ def character_position(string, letter_from_user):
     return result
 
 
-def correct_hits(correct, letter_from_user):
-    """ Place letter_from_user from letter_in_word in correct place in list.
-    Example: _ _ _ _ , "o"
+def correct_hits(word, correct, letter_from_user):
+    """ Place letter_from_user from correct in correct place in list.
+    Example: correct_hits("PIZZA", "_ _ _ _ _", "Z") returns "_ _ Z Z _"
     """
     hits = (character_position(word, letter_from_user))
     for hit in range(len(hits)):
@@ -45,8 +60,9 @@ def correct_hits(correct, letter_from_user):
 
 def error_handling(letter_from_user, failed, correct):
     """ Checks if letter_from_user is:
-    is more then one letter, a number, existing in failed and correct list.
+    More then one letter, a number, existing in failed and correct list.
     Prints out error-message to user.
+    Exampel: error_handling("E", ["E"], "E") return 
     """
     if not letter_from_user.isalpha():
         print("Ops, you entered a number ")
@@ -60,39 +76,41 @@ def error_handling(letter_from_user, failed, correct):
     return True
 
 
-def input_from_user(round, failed, correct):
+def input_from_user(failed, correct):
     """
     Print out "Type a letter". Convert letters to capitalize.
+    Exampel: input_from_user(["A"], "A")
     """
     done = False
     while not done:
-        letter_from_user = input("Type a letter: \n").capitalize()
+        letter_from_user = input("Type a letter: ").capitalize()
         done = error_handling(letter_from_user, failed, correct)
     return letter_from_user
 
 
 def main():
     """ Run the program """
+    word = make_up_word()
     failed = ""
-    letter_in_word = "_ _ _ _ "
-    for round in range(5):
-        print("Round " + str(round+1) + " of 8 ")
-        letter_from_user = input_from_user(round, failed, letter_in_word)
+    correct = correct_underscore(len(word))
+    for round in range(10):
+        print("Round " + str(round+1) + " of 10 ")
+        letter_from_user = input_from_user(failed, correct)
         if letter_from_user not in word:
             failed = failed + "[ " + letter_from_user + " ]"
-        correct = correct_hits(letter_in_word, letter_from_user)
+        correct = correct_hits(word, correct, letter_from_user)
         padding = make_padding(failed, correct)
         print(failed + padding + correct + "\n")
-        letter_in_word = correct
         if "_" not in correct:
             print("Well done!! ")
             break
-    print("The meal of the day is: " + word.lower())
+    print("The meal of the day is: " + word)
 
 
 """ Program starts here """
 print("Welcome to Classic! \n ")
 print("What is the meal of the day? ")
-print("You have 8 try's, have fun.\n ")
+print("You have 10 tries to guess the correct word.")
+print("Have fun!\n ")
 
 main()
