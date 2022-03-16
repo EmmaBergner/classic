@@ -25,10 +25,10 @@ def make_padding(failed, correct):
     """
     Create a string that is used as padding. The length of this string
     and the length of the two parameter strings will be the sum 60.
-    Example: make_padding("[D]", "_ A _ _ _") returns 54 spaces.
+    Example: make_padding("[D]", "_ A _ _ _") returns 59 spaces.
     """
     padding = " "
-    length = 60 - len(failed) - len(correct)
+    length = 65 - len(failed) - len(correct)
     for i in range(length):
         padding = padding + " "
     return padding
@@ -37,7 +37,7 @@ def make_padding(failed, correct):
 def character_position(string, letter_from_user):
     """
     Check if letter_from_user is in string.
-    Return a list of the positions (might be empty). 
+    Return a list of the positions (might be empty).
     Example: character_position("SOUP", "O") returns  "_ O _ _"
     """
     result = []
@@ -102,13 +102,14 @@ def main():
         padding = make_padding(failed, correct)
         print(failed + padding + correct + "\n")
         if "_" not in correct:
+            print("Congrats! ")
             print("Well done!! ")
             break
-    print("The meal of the day is: " + word)
+    print("The meal of the day is: " + word + " \n ")
 
 
 """ Program starts here """
-print("Welcome to Classic! \n ")
+print("\nWelcome to Classic! \n ")
 print("What is the meal of the day? ")
 print("You have 10 tries to guess the correct word.")
 print("Have fun!\n ")
