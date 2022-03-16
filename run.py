@@ -62,7 +62,7 @@ def error_handling(letter_from_user, failed, correct):
     """ Checks if letter_from_user is:
     More then one letter, a number, existing in failed and correct list.
     Prints out error-message to user.
-    Exampel: error_handling("E", ["E"], "E") return 
+    Exampel: error_handling("E", ["E"], "E") return
     """
     if not letter_from_user.isalpha():
         print("Ops, you entered a number ")
@@ -83,7 +83,8 @@ def input_from_user(failed, correct, round_info):
     """
     done = False
     while not done:
-        letter_from_user = input("Type a letter: " + round_info + "\n").capitalize()
+        letter_from_user = input("Type a letter: " + round_info + "\n")
+        letter_from_user = letter_from_user.capitalize()
         done = error_handling(letter_from_user, failed, correct)
     return letter_from_user
 
@@ -94,7 +95,8 @@ def main():
     failed = ""
     correct = correct_underscore(len(word))
     for round in range(10):
-        round_info = "                                          Round " + str(round+1) + " of 10 "
+        round_padding = "                                      Round "
+        round_info = round_padding + str(round+1) + " of 10 "
         letter_from_user = input_from_user(failed, correct, round_info)
         if letter_from_user not in word:
             failed = failed + "[ " + letter_from_user + " ]"
