@@ -76,14 +76,14 @@ def error_handling(letter_from_user, failed, correct):
     return True
 
 
-def input_from_user(failed, correct):
+def input_from_user(failed, correct, round_info):
     """
     Print out "Type a letter". Convert letters to capitalize.
     Exampel: input_from_user(["A"], "A")
     """
     done = False
     while not done:
-        letter_from_user = input("Type a letter: ").capitalize()
+        letter_from_user = input("Type a letter: " + round_info + "\n").capitalize()
         done = error_handling(letter_from_user, failed, correct)
     return letter_from_user
 
@@ -94,8 +94,8 @@ def main():
     failed = ""
     correct = correct_underscore(len(word))
     for round in range(10):
-        print("Round " + str(round+1) + " of 10 ")
-        letter_from_user = input_from_user(failed, correct)
+        round_info = "                                          Round " + str(round+1) + " of 10 "
+        letter_from_user = input_from_user(failed, correct, round_info)
         if letter_from_user not in word:
             failed = failed + "[ " + letter_from_user + " ]"
         correct = correct_hits(word, correct, letter_from_user)
