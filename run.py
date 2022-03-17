@@ -3,7 +3,7 @@ import random
 
 def make_up_word():
     """
-    Pick one random word from the file word.txt.
+    Pick one random word from the file word.txt. and returns it. 
     """
     with open('word.txt') as f:
         list_of_words = f.readlines()
@@ -49,7 +49,7 @@ def character_position(string, letter_from_user):
 
 
 def correct_hits(word, correct, letter_from_user):
-    """ 
+    """
     Place letter_from_user from correct in correct place in list.
     Example: correct_hits("PIZZA", "_ _ _ _ _", "Z") returns "_ _ Z Z _"
     """
@@ -61,7 +61,7 @@ def correct_hits(word, correct, letter_from_user):
 
 
 def error_handling(letter_from_user, failed, correct):
-    """ 
+    """
     Checks if letter_from_user is:
     More then one letter, a number, existing in failed and correct list.
     Prints out error-message to user.
@@ -115,8 +115,11 @@ def main():
 
 """ Program starts here """
 print("\nWelcome to Classic! \n ")
-print("What is the meal of the day? ")
-print("You have 10 tries to guess the correct word.")
-print("Have fun!\n ")
+print("What is the meal of the day? \n ")
+print("Enter a letter to get started. ")
+print("The right side will show letters matching the word. ")
+print("The left side will show incorrect letters. ")
+print("You will have 10 tries. \n ")
+print("Have fun! \n ")
 
 main()
