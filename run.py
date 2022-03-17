@@ -3,7 +3,7 @@ import random
 
 def make_up_word():
     """
-    Pick one random word from the file word.txt. and returns it. 
+    Pick one random word from the file word.txt and returns it.
     """
     with open('word.txt') as f:
         list_of_words = f.readlines()
@@ -12,7 +12,7 @@ def make_up_word():
 
 def correct_underscore(size):
     """
-    Create a sting with the number of underscored given by 'size',
+    Create a string with the number of underscores given by 'size',
     seperate by a space.
     Exampel: correct_underscore(6) returns "_ _ _ _ _ _".
     """
@@ -39,7 +39,7 @@ def character_position(string, letter_from_user):
     """
     Check if letter_from_user is in string.
     Return a list of the positions (might be empty).
-    Example: character_position("SOUP", "O") returns [2]
+    Example: character_position("SOUP", "O") returns [1]
     """
     result = []
     for i in range(len(string)):
@@ -50,7 +50,7 @@ def character_position(string, letter_from_user):
 
 def correct_hits(word, correct, letter_from_user):
     """
-    Place letter_from_user from correct in correct place in list.
+    Return 'letter_from_user' placed in 'correct' where matches in 'word' are found.
     Example: correct_hits("PIZZA", "_ _ _ _ _", "Z") returns "_ _ Z Z _"
     """
     hits = (character_position(word, letter_from_user))
@@ -63,9 +63,11 @@ def correct_hits(word, correct, letter_from_user):
 def error_handling(letter_from_user, failed, correct):
     """
     Checks if letter_from_user is:
-    More then one letter, a number, existing in failed and correct list.
+    More then one letter, a number, existing in failed or correct strings.
+    Returns False if an error is found, otherwise True.
     Prints out error-message to user.
-    Exampel: error_handling("E", ["E"], "E") return
+    Example: error_handling("E", "[E]", "E") prints 
+    "Ops, you already entered this letter" and returns False.
     """
     if not letter_from_user.isalpha():
         print("Ops, you entered a number ")
@@ -81,8 +83,10 @@ def error_handling(letter_from_user, failed, correct):
 
 def input_from_user(failed, correct, round_info):
     """
-    Print out "Type a letter". Convert letters to capitalize.
-    Exampel: input_from_user(["A"], "A")
+    Print out "Type a letter". Convert letters to capitals.
+    Will require the user to enter exactly one, unused, letter.
+    Return the input letter as a string.
+    Example: input_from_user("[A]", “P_ _ _ _”, “round 2 of 10”)
     """
     done = False
     while not done:
@@ -110,15 +114,15 @@ def main():
             print("Congrats! ")
             print("Well done!! ")
             break
-    print("The meal of the day is: " + word + " \n ")
+    print(" \n" "The meal of the day is: " + word + " \n ")
 
 
 """ Program starts here """
 print("\nWelcome to Classic! \n ")
 print("What is the meal of the day? \n ")
-print("Enter a letter to get started. ")
-print("The right side will show letters matching the word. ")
+print("Please enter a letter to get started. ")
 print("The left side will show incorrect letters. ")
+print("The right side will show letters matching the word. ")
 print("You will have 10 tries. \n ")
 print("Have fun! \n ")
 
